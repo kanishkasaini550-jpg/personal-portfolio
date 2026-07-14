@@ -311,144 +311,127 @@
                 <div class="projects-grid reveal-on-scroll">
                     <!-- 
                       HOW TO ADD YOUR OWN PROJECTS & LINKS:
-                      1. Copy a project block (e.g., from "<!-- Project 1 -->" down to its closing "
-                </div>" of project-card).
-                2. Paste it directly below the last project card.
-                3. Update the fields:
-                - data-category: 'web' (Web Apps), 'mobile' (Mobile), or 'ai' (AI / Data).
-                - img src: Change path to your project image (e.g., 'assets/my-project.jpg').
-                - link hrefs: Replace '#' in the <a> tags with:
-                    - github code link: in the <a> tag with class="overlay-link" and icon class="fa-brands fa-github".
-                        - live site/demo link: in the <a> tag with class="overlay-link" and icon class="fa-solid
-                            fa-arrow-up-right-from-square".
-                            - project-title: Enter your project name.
-                            - project-description: Enter a brief description.
-                            - project-tags: Modify the <span> tags to list your tools (e.g. <span>Python</span>).
-                                -->
+                      1. Copy a project block (e.g., from " Project 1 -->
+                </div>
+                <!-- Project 1 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img-wrapper">
+                        <img src="assets/project1.png" alt="Random Password Generator" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-overlay-links">
+                                <a href="#" class="overlay-link" aria-label="View Github Code"><i
+                                        class="fa-brands fa-github"></i></a>
+                                <a href="Password_Generator.html" target="_blank" class="overlay-link"
+                                    aria-label="Open Password Generator"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-category">Web App</span>
+                        <h3 class="project-title">Random Password Generator</h3>
+                        <p class="project-description">
+                            A clean, responsive web application that generates secure, customizable, and
+                            random passwords. Integrates character type controls, length sliders, and
+                            single-click copy buttons.
+                        </p>
+                        <div class="project-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
 
-                                <!-- Project 1 -->
-                                <div class="project-card" data-category="web">
-                                    <div class="project-img-wrapper">
-                                        <img src="assets/project1.png" alt="Random Password Generator"
-                                            class="project-img">
-                                        <div class="project-overlay">
-                                            <div class="project-overlay-links">
-                                                <a href="#" class="overlay-link" aria-label="View Github Code"><i
-                                                        class="fa-brands fa-github"></i></a>
-                                                <a href="Password_Generator.html" target="_blank" class="overlay-link"
-                                                    aria-label="Open Password Generator"><i
-                                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="project-details">
-                                        <span class="project-category">Web App</span>
-                                        <h3 class="project-title">Random Password Generator</h3>
-                                        <p class="project-description">
-                                            A clean, responsive web application that generates secure, customizable, and
-                                            random passwords. Integrates character type controls, length sliders, and
-                                            single-click copy buttons.
-                                        </p>
-                                        <div class="project-tags">
-                                            <span>HTML5</span>
-                                            <span>CSS3</span>
-                                            <span>JavaScript</span>
-                                        </div>
-                                    </div>
-                                </div>
+                <!-- Project 2 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img-wrapper">
+                        <img src="assets/project2.png" alt="Mini Game Selection Screen" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-overlay-links">
+                                <a href="#" class="overlay-link" aria-label="View Github Code"><i
+                                        class="fa-brands fa-github"></i></a>
+                                <a href="mini_game.html" target="_blank" class="overlay-link"
+                                    aria-label="Open Mini Game"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-category">Web Game</span>
+                        <h3 class="project-title">Character Selection Mini Game</h3>
+                        <p class="project-description">
+                            An interactive hero selection application. Choose between Warrior, Mage,
+                            Archer, and Ninja to change attributes dynamically and apply custom styled
+                            character card themes.
+                        </p>
+                        <div class="project-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
 
-                                <!-- Project 2 -->
-                                <div class="project-card" data-category="web">
-                                    <div class="project-img-wrapper">
-                                        <img src="assets/project2.png" alt="Mini Game Selection Screen"
-                                            class="project-img">
-                                        <div class="project-overlay">
-                                            <div class="project-overlay-links">
-                                                <a href="#" class="overlay-link" aria-label="View Github Code"><i
-                                                        class="fa-brands fa-github"></i></a>
-                                                <a href="mini_game.html" target="_blank" class="overlay-link"
-                                                    aria-label="Open Mini Game"><i
-                                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="project-details">
-                                        <span class="project-category">Web Game</span>
-                                        <h3 class="project-title">Character Selection Mini Game</h3>
-                                        <p class="project-description">
-                                            An interactive hero selection application. Choose between Warrior, Mage,
-                                            Archer, and Ninja to change attributes dynamically and apply custom styled
-                                            character card themes.
-                                        </p>
-                                        <div class="project-tags">
-                                            <span>HTML5</span>
-                                            <span>CSS3</span>
-                                            <span>JavaScript</span>
-                                        </div>
-                                    </div>
-                                </div>
+                <!-- Project 3 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img-wrapper">
+                        <img src="assets/to-do-list.png" alt="To-Do List Task Manager" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-overlay-links">
+                                <a href="#" class="overlay-link" aria-label="View Github Code"><i
+                                        class="fa-brands fa-github"></i></a>
+                                <a href="todo_list/index.html" target="_blank" class="overlay-link"
+                                    aria-label="Open To-Do List"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-category">Web App</span>
+                        <h3 class="project-title">Interactive Task Manager</h3>
+                        <p class="project-description">
+                            A simple and effective task manager application that helps you organize
+                            daily checklists, add new tasks, toggle task completion status, and remove
+                            finished items.
+                        </p>
+                        <div class="project-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
 
-                                <!-- Project 3 -->
-                                <div class="project-card" data-category="web">
-                                    <div class="project-img-wrapper">
-                                        <img src="assets/to-do-list.png" alt="To-Do List Task Manager"
-                                            class="project-img">
-                                        <div class="project-overlay">
-                                            <div class="project-overlay-links">
-                                                <a href="#" class="overlay-link" aria-label="View Github Code"><i
-                                                        class="fa-brands fa-github"></i></a>
-                                                <a href="todo_list/index.html" target="_blank" class="overlay-link"
-                                                    aria-label="Open To-Do List"><i
-                                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="project-details">
-                                        <span class="project-category">Web App</span>
-                                        <h3 class="project-title">Interactive Task Manager</h3>
-                                        <p class="project-description">
-                                            A simple and effective task manager application that helps you organize
-                                            daily checklists, add new tasks, toggle task completion status, and remove
-                                            finished items.
-                                        </p>
-                                        <div class="project-tags">
-                                            <span>HTML5</span>
-                                            <span>CSS3</span>
-                                            <span>JavaScript</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Project 4 -->
-                                <div class="project-card" data-category="web">
-                                    <div class="project-img-wrapper">
-                                        <img src="assets/project4.png" alt="TIMEX E-Commerce Product Page"
-                                            class="project-img">
-                                        <div class="project-overlay">
-                                            <div class="project-overlay-links">
-                                                <a href="#" class="overlay-link" aria-label="View Github Code"><i
-                                                        class="fa-brands fa-github"></i></a>
-                                                <a href="amazon_page/index.html" target="_blank" class="overlay-link"
-                                                    aria-label="Open Timex Product Page"><i
-                                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="project-details">
-                                        <span class="project-category">Web App</span>
-                                        <h3 class="project-title">Timex E-Commerce Product Page</h3>
-                                        <p class="project-description">
-                                            A premium e-commerce single-product page for a Timex watch. Features
-                                            interactive photo gallery previews, quantity adjusters, bank discounts
-                                            grids, and recommended product catalog sliders.
-                                        </p>
-                                        <div class="project-tags">
-                                            <span>HTML5</span>
-                                            <span>CSS3</span>
-                                            <span>JavaScript</span>
-                                        </div>
-                                    </div>
-                                </div>
+                <!-- Project 4 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img-wrapper">
+                        <img src="assets/project4.png" alt="TIMEX E-Commerce Product Page" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-overlay-links">
+                                <a href="#" class="overlay-link" aria-label="View Github Code"><i
+                                        class="fa-brands fa-github"></i></a>
+                                <a href="amazon_page/index.html" target="_blank" class="overlay-link"
+                                    aria-label="Open Timex Product Page"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-category">Web App</span>
+                        <h3 class="project-title">Timex E-Commerce Product Page</h3>
+                        <p class="project-description">
+                            A premium e-commerce single-product page for a Timex watch. Features
+                            interactive photo gallery previews, quantity adjusters, bank discounts
+                            grids, and recommended product catalog sliders.
+                        </p>
+                        <div class="project-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             </div>
         </section>
