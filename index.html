@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KANISHKA SAINI | Creative Full-Stack Developer & Designer</title>
+    <!-- Meta Description for SEO -->
+    <meta name="description"
+        content="Portfolio of Kanishka Saini, a creative web developer specializing in HTML, CSS, JavaScript, Python, and SQL databases.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome CDN for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Custom Scroll Progress Indicator -->
+    <div id="scroll-progress"></div>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo" id="logo">
+                <span class="logo-bracket">&lt;</span>Kanishka<span class="logo-dot">.</span>Saini <span
+                    class="logo-bracket">/&gt;</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Dark/Light Theme Toggle Button -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle display theme">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </button>
+                <!-- Mobile Navigation Toggle Button -->
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="hero-subtitle animate-on-load">Welcome to my space</span>
+                    <h1 class="hero-title animate-on-load">
+                        Hi, I'm <span class="text-gradient">Kanishka Saini</span>
+                    </h1>
+                    <h2 class="hero-typing animate-on-load">
+                        I am a <span class="typing-text"></span><span class="typed-cursor">|</span>
+                    </h2>
+                    <p class="hero-desc animate-on-load">
+                        Crafting high-performance web applications and visually stunning interfaces. I bridge the gap
+                        between design and engineering to build digital experiences that stick.
+                    </p>
+                    <div class="hero-actions animate-on-load">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View My Work</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Let's Talk</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual animate-on-load">
+                    <div class="avatar-wrapper">
+                        <div class="avatar-glow"></div>
+                        <img src="assets/avatar.jpg" alt="Kanishka Saini Portrait" class="avatar-img">
+                    </div>
+                </div>
+            </div>
+            <a href="#about" class="scroll-down-indicator" aria-label="Scroll down to About section">
+                <span class="mouse-icon">
+                    <span class="wheel"></span>
+                </span>
+                <span class="scroll-text">Scroll Down</span>
+            </a>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="about section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <span class="section-subtitle">Get to Know Me</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="title-divider"></div>
+                </div>
+
+                <div class="about-grid reveal-on-scroll">
+                    <div class="about-info">
+                        <h3>A passionate creator driven by design & code</h3>
+                        <p class="about-text">
+                            I am a digital artisan based in Seattle, Washington. For the past 5+ years, I've worked at
+                            the intersection of aesthetic design and front-end/back-end engineering. I love solving
+                            complex challenges and translating them into neat, accessible, and performant web products.
+                        </p>
+                        <p class="about-text">
+                            My journey began with editing custom game sites, which quickly bloomed into a full-scale
+                            career in full-stack software development. Today, I'm focused on developing performant cloud
+                            architectures and elegant user experiences.
+                        </p>
+                        <div class="personal-details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Location</span>
+                                <span class="detail-value">Seattle, WA (GMT-7)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Email</span>
+                                <span class="detail-value">kanishkasaini550@gmail.com</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Availability</span>
+                                <span class="detail-value">Open to remote contracts</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Interests</span>
+                                <span class="detail-value">IoT, Generative Art, Hiking</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years of Experience</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <span class="stat-number">40+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <span class="stat-number">25+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Design & Dev Awards</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <span class="section-subtitle">My Capabilities</span>
+                    <h2 class="section-title">My Skills</h2>
+                    <div class="title-divider"></div>
+                </div>
+
+                <div class="skills-grid reveal-on-scroll">
+                    <!-- HTML Card -->
+                    <div class="skills-card">
+                        <div class="skills-card-header">
+                            <i class="fa-brands fa-html5 header-icon html-color"></i>
+                            <h3>HTML5</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Semantic Markup & Accessibility</span>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-bar-wrapper">
+                                    <div class="skill-bar" data-progress="95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CSS Card -->
+                    <div class="skills-card">
+                        <div class="skills-card-header">
+                            <i class="fa-brands fa-css3-alt header-icon css-color"></i>
+                            <h3>CSS3</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Flexbox, Grid, Responsive & Sass</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar-wrapper">
+                                    <div class="skill-bar" data-progress="90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JavaScript Card -->
+                    <div class="skills-card">
+                        <div class="skills-card-header">
+                            <i class="fa-brands fa-js header-icon js-color"></i>
+                            <h3>JavaScript</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">ES6+, DOM Manipulation & APIs</span>
+                                    <span class="skill-percentage">88%</span>
+                                </div>
+                                <div class="skill-bar-wrapper">
+                                    <div class="skill-bar" data-progress="88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Python Card -->
+                    <div class="skills-card">
+                        <div class="skills-card-header">
+                            <i class="fa-brands fa-python header-icon py-color"></i>
+                            <h3>Python</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Data Scripting & Backend Logic</span>
+                                    <span class="skill-percentage">82%</span>
+                                </div>
+                                <div class="skill-bar-wrapper">
+                                    <div class="skill-bar" data-progress="82%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SQL Databases Card -->
+                    <div class="skills-card">
+                        <div class="skills-card-header">
+                            <i class="fa-solid fa-database header-icon sql-color"></i>
+                            <h3>SQL Databases</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Querying, Relational Schemas & Design</span>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-bar-wrapper">
+                                    <div class="skill-bar" data-progress="80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid Section -->
+        <section id="projects" class="projects section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <span class="section-subtitle">Showcasing My Work</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="title-divider"></div>
+                </div>
+
+                <!-- Filters -->
+                <div class="project-filters reveal-on-scroll">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="web">Web Apps</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="ai">AI / Data</button>
+                </div>
+
+                <!-- Grid -->
+                <div class="projects-grid reveal-on-scroll">
+                    <!-- 
+                      HOW TO ADD YOUR OWN PROJECTS & LINKS:
+                      1. Copy a project block (e.g., from "<!-- Project 1 -->" down to its closing "
+                </div>" of project-card).
+                2. Paste it directly below the last project card.
+                3. Update the fields:
+                - data-category: 'web' (Web Apps), 'mobile' (Mobile), or 'ai' (AI / Data).
+                - img src: Change path to your project image (e.g., 'assets/my-project.jpg').
+                - link hrefs: Replace '#' in the <a> tags with:
+                    - github code link: in the <a> tag with class="overlay-link" and icon class="fa-brands fa-github".
+                        - live site/demo link: in the <a> tag with class="overlay-link" and icon class="fa-solid
+                            fa-arrow-up-right-from-square".
+                            - project-title: Enter your project name.
+                            - project-description: Enter a brief description.
+                            - project-tags: Modify the <span> tags to list your tools (e.g. <span>Python</span>).
+                                -->
+
+                                <!-- Project 1 -->
+                                <div class="project-card" data-category="web">
+                                    <div class="project-img-wrapper">
+                                        <img src="assets/project1.png" alt="Random Password Generator"
+                                            class="project-img">
+                                        <div class="project-overlay">
+                                            <div class="project-overlay-links">
+                                                <a href="#" class="overlay-link" aria-label="View Github Code"><i
+                                                        class="fa-brands fa-github"></i></a>
+                                                <a href="Password_Generator.html" target="_blank" class="overlay-link"
+                                                    aria-label="Open Password Generator"><i
+                                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-details">
+                                        <span class="project-category">Web App</span>
+                                        <h3 class="project-title">Random Password Generator</h3>
+                                        <p class="project-description">
+                                            A clean, responsive web application that generates secure, customizable, and
+                                            random passwords. Integrates character type controls, length sliders, and
+                                            single-click copy buttons.
+                                        </p>
+                                        <div class="project-tags">
+                                            <span>HTML5</span>
+                                            <span>CSS3</span>
+                                            <span>JavaScript</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project 2 -->
+                                <div class="project-card" data-category="web">
+                                    <div class="project-img-wrapper">
+                                        <img src="assets/project2.png" alt="Mini Game Selection Screen"
+                                            class="project-img">
+                                        <div class="project-overlay">
+                                            <div class="project-overlay-links">
+                                                <a href="#" class="overlay-link" aria-label="View Github Code"><i
+                                                        class="fa-brands fa-github"></i></a>
+                                                <a href="mini_game.html" target="_blank" class="overlay-link"
+                                                    aria-label="Open Mini Game"><i
+                                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-details">
+                                        <span class="project-category">Web Game</span>
+                                        <h3 class="project-title">Character Selection Mini Game</h3>
+                                        <p class="project-description">
+                                            An interactive hero selection application. Choose between Warrior, Mage,
+                                            Archer, and Ninja to change attributes dynamically and apply custom styled
+                                            character card themes.
+                                        </p>
+                                        <div class="project-tags">
+                                            <span>HTML5</span>
+                                            <span>CSS3</span>
+                                            <span>JavaScript</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project 3 -->
+                                <div class="project-card" data-category="web">
+                                    <div class="project-img-wrapper">
+                                        <img src="assets/to-do-list.png" alt="To-Do List Task Manager"
+                                            class="project-img">
+                                        <div class="project-overlay">
+                                            <div class="project-overlay-links">
+                                                <a href="#" class="overlay-link" aria-label="View Github Code"><i
+                                                        class="fa-brands fa-github"></i></a>
+                                                <a href="todo_list/index.html" target="_blank" class="overlay-link"
+                                                    aria-label="Open To-Do List"><i
+                                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-details">
+                                        <span class="project-category">Web App</span>
+                                        <h3 class="project-title">Interactive Task Manager</h3>
+                                        <p class="project-description">
+                                            A simple and effective task manager application that helps you organize
+                                            daily checklists, add new tasks, toggle task completion status, and remove
+                                            finished items.
+                                        </p>
+                                        <div class="project-tags">
+                                            <span>HTML5</span>
+                                            <span>CSS3</span>
+                                            <span>JavaScript</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project 4 -->
+                                <div class="project-card" data-category="web">
+                                    <div class="project-img-wrapper">
+                                        <img src="assets/project4.png" alt="TIMEX E-Commerce Product Page"
+                                            class="project-img">
+                                        <div class="project-overlay">
+                                            <div class="project-overlay-links">
+                                                <a href="#" class="overlay-link" aria-label="View Github Code"><i
+                                                        class="fa-brands fa-github"></i></a>
+                                                <a href="amazon_page/index.html" target="_blank" class="overlay-link"
+                                                    aria-label="Open Timex Product Page"><i
+                                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-details">
+                                        <span class="project-category">Web App</span>
+                                        <h3 class="project-title">Timex E-Commerce Product Page</h3>
+                                        <p class="project-description">
+                                            A premium e-commerce single-product page for a Timex watch. Features
+                                            interactive photo gallery previews, quantity adjusters, bank discounts
+                                            grids, and recommended product catalog sliders.
+                                        </p>
+                                        <div class="project-tags">
+                                            <span>HTML5</span>
+                                            <span>CSS3</span>
+                                            <span>JavaScript</span>
+                                        </div>
+                                    </div>
+                                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline Section -->
+        <section id="experience" class="experience section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <span class="section-subtitle">My Career Journey</span>
+                    <h2 class="section-title">Work Experience</h2>
+                    <div class="title-divider"></div>
+                </div>
+
+                <div class="timeline reveal-on-scroll">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-date">2024 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Senior Front-End Architect</h3>
+                            <h4 class="company">InnovaTech Solutions</h4>
+                            <p>
+                                Leading a team of 4 frontend engineers building the next-generation SaaS workspace
+                                client. Standardized design tokens with styled components, boosting performance by 35%
+                                and streamlining designer-to-developer handoff.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-date">2022 - 2024</div>
+                        <div class="timeline-content">
+                            <h3>Full-Stack Engineer</h3>
+                            <h4 class="company">PixelCraft Digital Agency</h4>
+                            <p>
+                                Developed and deployed 15+ custom client websites and backend APIs. Integrated automated
+                                CI/CD pipelines, reducing manual deployment cycles by 80%. Managed migration from legacy
+                                SQL databases to robust, high-performance PostgreSQL nodes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-date">2021 - 2022</div>
+                        <div class="timeline-content">
+                            <h3>Software Engineering Intern</h3>
+                            <h4 class="company">Centric Systems</h4>
+                            <p>
+                                Contributed to building microservices and RESTful API endpoints using Node.js.
+                                Collaborated on implementing accessible UI modules, resolving over 120+ customer-facing
+                                layout issues.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-dot-end">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <span class="section-subtitle">Let's Connect</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="title-divider"></div>
+                </div>
+
+                <div class="contact-wrapper reveal-on-scroll">
+                    <!-- Left: Contact Details -->
+                    <div class="contact-info-panel">
+                        <h3>Let's start a project together</h3>
+                        <p class="contact-desc">
+                            Have an exciting project idea, a position to fill, or just want to chat about engineering
+                            aesthetics? Feel free to reach out. I'm always open to discussing new opportunities.
+                        </p>
+
+                        <div class="contact-details">
+                            <div class="contact-card-item">
+                                <div class="contact-icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="contact-card-text">
+                                    <span>Send an Email</span>
+                                    <a href="mailto:kanishkasaini550@gmail.com">kanishkasaini550@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-card-item">
+                                <div class="contact-icon">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="contact-card-text">
+                                    <span>Call or Text</span>
+                                    <a href="tel:+12065550192">+1 (206) 555-0192</a>
+                                </div>
+                            </div>
+                            <div class="contact-card-item">
+                                <div class="contact-icon">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="contact-card-text">
+                                    <span>Location</span>
+                                    <a href="#">Seattle, WA, USA</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="#" class="social-btn" aria-label="Kanishka Saini Github Profile"><i
+                                    class="fa-brands fa-github"></i></a>
+                            <a href="#" class="social-btn" aria-label="Kanishka Saini LinkedIn Profile"><i
+                                    class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" class="social-btn" aria-label="Kanishka Saini Twitter Profile"><i
+                                    class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" class="social-btn" aria-label="Kanishka Saini Dribbble Profile"><i
+                                    class="fa-brands fa-dribbble"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Contact Form -->
+                    <div class="contact-form-panel">
+                        <form id="contact-form" autocomplete="off">
+                            <!-- Web3Forms Access Key: Activated for kanishkasaini550@gmail.com -->
+                            <input type="hidden" name="access_key" value="d3d74920-4a12-4c1a-8dbf-7349116f3d7f">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                                    <span class="error-msg">Name is required</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                                    <span class="error-msg">Valid email is required</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required
+                                    placeholder="Let's collaborate!">
+                                <span class="error-msg">Subject is required</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required
+                                    placeholder="Hi Kanishka, I would love to build..."></textarea>
+                                <span class="error-msg">Message cannot be empty</span>
+                            </div>
+                            <button type="submit" class="btn btn-primary form-submit" id="submit-btn">
+                                <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+
+                        <!-- Success Message -->
+                        <div class="form-success" id="form-success">
+                            <div class="success-icon-wrapper">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <h3>Thank You!</h3>
+                            <p>Your message has been sent successfully. I'll get back to you within 24 hours.</p>
+                            <button class="btn btn-primary" id="success-reset-btn">Send Another Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-copy">&copy; 2026 Kanishka Saini. Built with passion and code.</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Scroll back to top of the page">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom Javascript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

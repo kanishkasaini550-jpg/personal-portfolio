@@ -1,0 +1,533 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Selection | Mini Game</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --bg-primary: #0a0d16;
+            --bg-card: rgba(16, 22, 38, 0.6);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            
+            /* Character Theme Colors */
+            --warrior-color: #ffa500;
+            --mage-color: #a855f7;
+            --archer-color: #22c55e;
+            --ninja-color: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            background-image: radial-gradient(circle at 50% 50%, #161a2d 0%, #0a0d16 100%);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            text-align: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.8s ease;
+        }
+
+        .back-btn {
+            align-self: flex-start;
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-btn:hover {
+            border-color: #8b5cf6;
+            transform: translateX(-3px);
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 680px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(16px);
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: var(--font-heading);
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #a78bfa 0%, #22d3ee 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Buttons Grid */
+        .character-select-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .char-btn {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            padding: 15px 10px;
+            cursor: pointer;
+            border-radius: 16px;
+            background-color: rgba(22, 31, 56, 0.5);
+            color: white;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .char-btn img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: #111;
+            /* Stylized fallback if image breaks */
+            alt: "Char";
+        }
+
+        .char-btn:hover {
+            transform: translateY(-5px);
+            background-color: rgba(30, 41, 73, 0.8);
+        }
+
+        /* Hover glows based on character class */
+        .char-btn.warrior { border-color: rgba(255, 165, 0, 0.3); }
+        .char-btn.warrior:hover { border-color: var(--warrior-color); box-shadow: 0 0 15px rgba(255, 165, 0, 0.4); }
+        
+        .char-btn.mage { border-color: rgba(168, 85, 247, 0.3); }
+        .char-btn.mage:hover { border-color: var(--mage-color); box-shadow: 0 0 15px rgba(168, 85, 247, 0.4); }
+        
+        .char-btn.archer { border-color: rgba(34, 197, 94, 0.3); }
+        .char-btn.archer:hover { border-color: var(--archer-color); box-shadow: 0 0 15px rgba(34, 197, 94, 0.4); }
+        
+        .char-btn.ninja { border-color: rgba(239, 68, 68, 0.3); }
+        .char-btn.ninja:hover { border-color: var(--ninja-color); box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
+
+        /* Favorite Indicator Block */
+        #fav {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffb700;
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(255, 183, 0, 0.1);
+            border: 1px solid rgba(255, 183, 0, 0.2);
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Details Card Panel */
+        .details-panel {
+            margin-top: 25px;
+            background-color: rgba(22, 31, 56, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            text-align: left;
+        }
+
+        .avatar-container {
+            flex-shrink: 0;
+            width: 140px;
+            height: 140px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            background-color: #0d0f17;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        #bigImage {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #bigImage[src] {
+            opacity: 1;
+        }
+
+        /* Placeholder icon when image is broken/empty */
+        .avatar-placeholder {
+            position: absolute;
+            font-size: 3rem;
+            color: var(--text-muted);
+            z-index: 0;
+        }
+
+        .info-container {
+            flex-grow: 1;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .info-label {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            width: 110px;
+            color: var(--text-secondary);
+        }
+
+        .info-value {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        #name {
+            font-size: 1.25rem;
+            background: linear-gradient(135deg, #a78bfa 0%, #22d3ee 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Bar Widgets */
+        .stat-bar-outer {
+            width: 100%;
+            max-width: 220px;
+            height: 12px;
+            background: #111522;
+            border-radius: 6px;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-bar-fill {
+            height: 100%;
+            width: 0%;
+            border-radius: 6px;
+            transition: width 0.8s cubic-bezier(0.1, 1, 0.1, 1);
+        }
+
+        #powerFill { background: linear-gradient(90deg, #3b82f6, #06b6d4); }
+        #healthFill { background: linear-gradient(90deg, #ef4444, #f97316); }
+
+        /* Fav Button */
+        .fav-btn {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+            color: white;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+        }
+
+        .fav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .character-select-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .details-panel {
+                flex-direction: column;
+                text-align: center;
+            }
+            .info-row {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+            .info-label {
+                width: 100%;
+                margin-bottom: 2px;
+            }
+            .stat-bar-outer {
+                margin-left: 0;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Back to Portfolio</span>
+    </a>
+
+    <div class="container">
+        <h2>★ Choose Your Character ★</h2>
+        
+        <div class="character-select-grid">
+            <button class="char-btn warrior" onclick="war()">
+                <img src="assets/warrior.jpg" onerror="this.style.display='none'" alt="">
+                <span>WARRIOR</span>
+            </button>
+            <button class="char-btn mage" onclick="mag()">
+                <img src="assets/mage.jpg" onerror="this.style.display='none'" alt="">
+                <span>MAGE</span>
+            </button>
+            <button class="char-btn archer" onclick="arc()">
+                <img src="assets/archer.jpg" onerror="this.style.display='none'" alt="">
+                <span>ARCHER</span>
+            </button>
+            <button class="char-btn ninja" onclick="nin()">
+                <img src="assets/ninja.jpg" onerror="this.style.display='none'" alt="">
+                <span>NINJA</span>
+            </button>
+        </div>
+
+        <div id="fav"></div>
+
+        <div class="details-panel" id="details-card">
+            <div class="avatar-container">
+                <i class="fa-solid fa-user-shield avatar-placeholder"></i>
+                <img id="bigImage" alt="">
+            </div>
+            
+            <div class="info-container">
+                <div class="info-row">
+                    <span class="info-label">Character:</span>
+                    <span class="info-value" id="name">Select a Hero</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Weapon:</span>
+                    <span class="info-value" id="weapon">-</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Power:</span>
+                    <span class="info-value" id="power">-</span>
+                    <div class="stat-bar-outer">
+                        <div class="stat-bar-fill" id="powerFill"></div>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Health:</span>
+                    <span class="info-value" id="health">-</span>
+                    <div class="stat-bar-outer">
+                        <div class="stat-bar-fill" id="healthFill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="fav()" class="fav-btn">
+            <i class="fa-solid fa-star"></i> Add To Favorites
+        </button>
+    </div>
+
+    <script>
+        // Keep tracking variable
+        let Character = "";
+
+        function war() {
+            Character = "warrior";
+            changeTheme("warrior");
+            changeBackground("warrior");
+            document.getElementById("bigImage").src = "assets/warrior.jpg";
+            document.getElementById("name").innerHTML = "Warrior";
+            document.getElementById("weapon").innerHTML = "Sword";
+            document.getElementById("power").innerHTML = "100";
+            document.getElementById("health").innerHTML = "50";
+
+            document.getElementById("powerFill").style.width = "100%";
+            document.getElementById("healthFill").style.width = "50%";
+            
+            // Adjust visual placeholder
+            updatePlaceholderIcon("fa-user-ninja");
+        }
+
+        function mag() {
+            Character = "mage";
+            changeTheme("mage");
+            changeBackground("mage");
+            document.getElementById("bigImage").src = "assets/mage.jpg";
+            document.getElementById("name").innerHTML = "Mage";
+            document.getElementById("weapon").innerHTML = "Magic Wand";
+            document.getElementById("power").innerHTML = "80";
+            document.getElementById("health").innerHTML = "70";
+
+            document.getElementById("powerFill").style.width = "80%";
+            document.getElementById("healthFill").style.width = "70%";
+            
+            updatePlaceholderIcon("fa-wand-magic-sparkles");
+        }
+
+        function arc() {
+            Character = "archer";
+            changeTheme("archer");
+            changeBackground("archer");
+            document.getElementById("bigImage").src = "assets/archer.jpg";
+            document.getElementById("name").innerHTML = "Archer";
+            document.getElementById("weapon").innerHTML = "Bow & Arrow";
+            document.getElementById("power").innerHTML = "90";
+            document.getElementById("health").innerHTML = "40";
+
+            document.getElementById("powerFill").style.width = "90%";
+            document.getElementById("healthFill").style.width = "40%";
+            
+            updatePlaceholderIcon("fa-crosshairs");
+        }
+
+        function nin() {
+            Character = "ninja";
+            changeTheme("ninja");
+            changeBackground("ninja");
+            document.getElementById("bigImage").src = "assets/ninja.jpg";
+            document.getElementById("name").innerHTML = "Ninja";
+            document.getElementById("weapon").innerHTML = "Katana";
+            document.getElementById("power").innerHTML = "95";
+            document.getElementById("health").innerHTML = "80";
+
+            document.getElementById("powerFill").style.width = "95%";
+            document.getElementById("healthFill").style.width = "80%";
+            
+            updatePlaceholderIcon("fa-user-ninja");
+        }
+
+        function updatePlaceholderIcon(iconClass) {
+            const placeholder = document.querySelector('.avatar-placeholder');
+            placeholder.className = `fa-solid ${iconClass} avatar-placeholder`;
+        }
+        
+        function changeBackground(character){
+            let details = document.getElementById("details-card");
+            switch(character){
+                case "warrior":
+                    details.style.backgroundColor = "rgba(255, 165, 0, 0.15)";
+                    details.style.borderColor = "var(--warrior-color)";
+                    details.style.boxShadow = "0 8px 32px rgba(255, 165, 0, 0.2)";
+                    break;
+                case "mage":
+                    details.style.backgroundColor = "rgba(168, 85, 247, 0.15)";
+                    details.style.borderColor = "var(--mage-color)";
+                    details.style.boxShadow = "0 8px 32px rgba(168, 85, 247, 0.2)";
+                    break;
+                case "archer":
+                    details.style.backgroundColor = "rgba(34, 197, 94, 0.15)";
+                    details.style.borderColor = "var(--archer-color)";
+                    details.style.boxShadow = "0 8px 32px rgba(34, 197, 94, 0.2)";
+                    break;
+                case "ninja":
+                    details.style.backgroundColor = "rgba(239, 68, 68, 0.15)";
+                    details.style.borderColor = "var(--ninja-color)";
+                    details.style.boxShadow = "0 8px 32px rgba(239, 68, 68, 0.2)";
+                    break;
+            }
+        }
+
+        function changeTheme(character){
+            switch(character){
+                case "warrior":
+                    document.body.style.backgroundColor = "#241805";
+                    break;
+                case "mage":
+                    document.body.style.backgroundColor = "#1b0a2d";
+                    break;
+                case "archer":
+                    document.body.style.backgroundColor = "#071f0d";
+                    break;
+                case "ninja":
+                    document.body.style.backgroundColor = "#260606";
+                    break;
+            }
+        }
+
+        function fav() {
+            const favDiv = document.getElementById("fav");
+            if (Character === "") {
+                favDiv.style.display = "block";
+                favDiv.innerHTML = "⚠️ Please select a character first.";
+                favDiv.style.color = "#ef4444";
+                favDiv.style.backgroundColor = "rgba(239, 68, 68, 0.1)";
+                favDiv.style.borderColor = "rgba(239, 68, 68, 0.2)";
+                return;
+            }
+            
+            // Format character capitalization
+            const displayName = Character.charAt(0).toUpperCase() + Character.slice(1);
+            favDiv.style.display = "block";
+            favDiv.innerHTML = `⭐ Favorite Character Selected: <strong>${displayName}</strong>`;
+            favDiv.style.color = "#ffb700";
+            favDiv.style.backgroundColor = "rgba(255, 183, 0, 0.1)";
+            favDiv.style.borderColor = "rgba(255, 183, 0, 0.2)";
+        }
+    </script>
+</body>
+</html>
