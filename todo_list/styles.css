@@ -1,0 +1,269 @@
+/* ==========================================================================
+   DESIGN SYSTEM & VARIABLES
+   ========================================================================== */
+:root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --bg-primary: #0a0d16;
+    --bg-card: rgba(16, 22, 38, 0.6);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    
+    --accent-purple: #8b5cf6;
+    --accent-cyan: #06b6d4;
+    --gradient-accent: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-cyan) 100%);
+    --gradient-accent-hover: linear-gradient(135deg, #7c3aed 0%, #0891b2 100%);
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-primary);
+    background-image: radial-gradient(circle at 50% 50%, #161a2d 0%, #0a0d16 100%);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    text-align: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Back button */
+.back-btn {
+    align-self: flex-start;
+    margin-bottom: 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 200px;
+}
+
+.back-btn:hover {
+    border-color: var(--accent-purple);
+    transform: translateX(-3px);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+}
+
+/* Main Container */
+.container {
+    width: 100%;
+    max-width: 540px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(16px);
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #a78bfa 0%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p.subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Input Row */
+.input-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 14px 18px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: rgba(10, 13, 22, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.15);
+    background-color: rgba(10, 13, 22, 0.8);
+}
+
+button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 12px;
+    cursor: pointer;
+    background: var(--gradient-accent);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+/* Task List */
+ul#taskList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 380px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Custom Scrollbar for list */
+ul#taskList::-webkit-scrollbar {
+    width: 6px;
+}
+
+ul#taskList::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+ul#taskList::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+ul#taskList::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-purple);
+}
+
+/* Task Item */
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+li:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Check / Complete Button styling */
+li button:first-child {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+li button:first-child:hover {
+    transform: scale(1.2);
+}
+
+/* Task Content Text */
+li span {
+    flex-grow: 1;
+    text-align: left;
+    margin: 0 15px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    word-break: break-all;
+}
+
+/* Completed task style class */
+.completed {
+    text-decoration: line-through;
+    color: var(--text-muted, #6b7280);
+    opacity: 0.6;
+}
+
+/* Delete / Remove Button */
+li .remove-btn {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+li .remove-btn:hover {
+    background: #ef4444;
+    color: #ffffff;
+    border-color: transparent;
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
+}
+
+/* Responsive adjustment */
+@media (max-width: 480px) {
+    .input-container {
+        flex-direction: column;
+    }
+    input[type="text"] {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+        justify-content: center;
+    }
+}
